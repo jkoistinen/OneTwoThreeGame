@@ -8,11 +8,13 @@ import java.util.ArrayList;
  */
 public class Player
 {
-    // instance variables - replace the example below with your own
-    public String name;
-    public List<Integer> scoreList = new ArrayList<Integer>();
+    // instance variables
+    private String name;
+    private List<Integer> scoreList = new ArrayList<Integer>();
     
     public int totroundswon = 0;
+    
+    // static variables
     
     /**
      * Constructor for objects of class Player
@@ -23,7 +25,13 @@ public class Player
         this.name = name;
        
     }
-
+    public String getName(){
+    return name;
+    }
+    
+    public void setName(String name){
+    this.name = name;
+    }
     /**
      * 
      * @param  y   a sample parameter for a method
@@ -33,6 +41,11 @@ public class Player
     {
        scoreList.add(points);
        //System.out.println(scoreList);
+    }
+    
+    public int getPoints(int i)
+    {
+       return scoreList.get(i);
     }
     
     public void incrementRoundsWon()

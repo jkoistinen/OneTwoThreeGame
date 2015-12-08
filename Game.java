@@ -57,7 +57,7 @@ public static void main(String[] args) {
         //System.out.println("Namn:"+PlayerObject[j].name);
         int rollDice = myGame.playRound();
         PlayerObject[j].addPoints(rollDice);
-        String spelare = PlayerObject[j].name;
+        String spelare = PlayerObject[j].getName();
         int points = rollDice;
         System.out.println(spelare+" "+":"+rollDice+" "+"poäng");
     }
@@ -66,7 +66,7 @@ public static void main(String[] args) {
     int max = 0;
     int winningplayerobject = 0;
     for(int k = 0; k < playerList.size(); k++) {
-      int inspected = PlayerObject[k].scoreList.get(i-1);
+      int inspected = PlayerObject[k].getPoints(i-1);
      
       //System.out.println("Looking at PlayerObject:"+k);
       
@@ -80,7 +80,7 @@ public static void main(String[] args) {
     int counter = 0;
     boolean isTie = false;
     for(int l = 0; l < playerList.size(); l++) {
-     int inspected = PlayerObject[l].scoreList.get(i-1);
+     int inspected = PlayerObject[l].getPoints(i-1);
      if(inspected == max){
          counter = counter + 1;
         }
@@ -93,7 +93,7 @@ public static void main(String[] args) {
     if (isTie) {
     System.out.println("Oavgjort, flera spelare har samma max poäng!"+"("+max+")");
     } else {
-      String spelare = PlayerObject[winningplayerobject].name;
+      String spelare = PlayerObject[winningplayerobject].getName();
       System.out.println("Vinnare av runda"+" "+i+" "+"med"+" "+max+" "+"poäng är:"+spelare);
       //give point for winning the round
       PlayerObject[winningplayerobject].incrementRoundsWon();
@@ -108,7 +108,7 @@ public static void main(String[] args) {
     int winningplayerobject = 0;
     for(int m = 0; m < playerList.size(); m++) {
         int total = PlayerObject[m].totroundswon;
-        String spelare = PlayerObject[m].name;
+        String spelare = PlayerObject[m].getName();
         System.out.println(spelare+" "+"vann totalt:"+" "+total+" "+"gånger");
         if (total > max) {
           max = total;
@@ -133,7 +133,7 @@ public static void main(String[] args) {
     if (isTie) {
     System.out.println("Oavgjort, flera spelare har samma max totalpoäng!");
     } else {
-        System.out.println("Vinnare är:"+PlayerObject[winningplayerobject].name);
+        System.out.println("Vinnare är:"+PlayerObject[winningplayerobject].getName());
     }
     
     }
