@@ -12,7 +12,7 @@ public class Player
     private String name;
     private List<Integer> scoreList = new ArrayList<Integer>();
     
-    public int totroundswon = 0;
+    private int totroundswon = 0;
     
     // static variables
     
@@ -51,5 +51,8 @@ public class Player
     public void incrementRoundsWon()
     {
        totroundswon = totroundswon + 1;
+    }
+    public int getRoundsWon() {
+      return totroundswon;
     }
 }

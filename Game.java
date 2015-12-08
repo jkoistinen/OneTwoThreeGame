@@ -107,7 +107,7 @@ public static void main(String[] args) {
     int max = 0;
     int winningplayerobject = 0;
     for(int m = 0; m < playerList.size(); m++) {
-        int total = PlayerObject[m].totroundswon;
+        int total = PlayerObject[m].getRoundsWon();
         String spelare = PlayerObject[m].getName();
         System.out.println(spelare+" "+"vann totalt:"+" "+total+" "+"gånger");
         if (total > max) {
@@ -121,8 +121,8 @@ public static void main(String[] args) {
     int counter = 0;
     boolean isTie = false;
     for(int n = 0; n < playerList.size(); n++) {
-    int current = PlayerObject[n].totroundswon;
-    int winner = PlayerObject[winningplayerobject].totroundswon;
+    int current = PlayerObject[n].getRoundsWon();
+    int winner = PlayerObject[winningplayerobject].getRoundsWon();
      if(current == winner){
          counter = counter + 1;
         }   
