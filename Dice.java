@@ -1,11 +1,11 @@
 import java.util.Random;
 /**
  * This is class Dice, it creates a Dice object that will return a int between low and high
- * 
- * @author Jaakko Koistinen 
+ *
+ * @author Jaakko Koistinen
  * @version (a version number or a date)
  */
-public class Dice
+public class Dice implements DiceInterface
 {
     // instance variables
     private int low;
@@ -24,11 +24,11 @@ public class Dice
 
     /**
      * rollDice method
-     * 
+     *
      * @param  no parameters
      * @return     int result
      */
-    
+
     public int rollDice() {
         Random random = new Random();
 		int result = random.nextInt(high) + low;
